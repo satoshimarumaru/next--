@@ -11,7 +11,7 @@ export default function Navbar() {
         <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-800 via-gray-600 to-gray-400 shadow">
             <div className="max-w-4xl mx-auto flex items-center justify-between px-6 py-3">
                 <div className="flex items-center gap-6">
-                    <Link href="/" className="font-bold text-lg hover:underline text-white">
+                    <Link href="/" className="hover:underline text-white/90 transition">
                         ホーム
                     </Link>
                     {session && (

@@ -13,7 +13,9 @@ interface PostsPageProps {
 
 const PAGE_SIZE = 10;
 
-export default async function Page({ searchParams }: PostsPageProps) {
+export default async function Page(props : PostsPageProps) {
+
+    const {searchParams} = await props;
     const session = await getServerSession(authOptions);
     if (!session) {
         redirect("/login");
@@ -47,11 +49,11 @@ export default async function Page({ searchParams }: PostsPageProps) {
     const totalPages = Math.ceil(total / PAGE_SIZE);
 
     return (
-        <div className="max-w-2xl mx-auto p-6">
+        <div className="max-w-2xl mx-auto p-6 mt-15 ">
             <h1 className="text-2xl font-bold mb-6">投稿一覧</h1>
-            <ul className="space-y-4">
+            <ul className="space-y-4 ">
                 {posts.map((post) => (
-                    <li key={post.id} className="p-4 bg-white rounded shadow">
+                    <li key={post.id} className="p-4 bg-white rounded shadow hover:scale-103 transition-transform">
                         <div className="flex items-center gap-2 font-semibold text-lg">
                             <span>
                                 <Link href={`/dashboard/posts/${post.id}`} className="hover:underline">

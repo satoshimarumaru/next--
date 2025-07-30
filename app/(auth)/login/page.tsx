@@ -16,7 +16,7 @@ const Page = () => {
     });
 
     const onSubmit = async (data: FormData) => {
-        setError(""); // 送信時にエラーをリセット
+        setError(""); 
         try {
             const signInRes = await signIn("credentials", {
                 email: data.email,
